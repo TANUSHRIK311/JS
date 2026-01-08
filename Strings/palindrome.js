@@ -1,3 +1,6 @@
+
+//Find The Given String Is Palindrome Or Not
+
 function isPalindrome(str){
     return str === str.split('').reverse().join('');
 
