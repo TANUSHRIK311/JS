@@ -19,3 +19,11 @@ function twoPointerPalindrome(str) {
 }
 console.log(twoPointerPalindrome("madam")); // true
 console.log(twoPointerPalindrome("world")); // false
+
+function isPalindromeFunctionalApproach(str) {
+    let cleanedStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+    let reversedStr = cleanedStr.split('').reverse().join('');
+    return cleanedStr === reversedStr;
+}
+console.log(isPalindromeFunctionalApproach("A man, a plan, a canal: Panama")); // true
+console.log(isPalindromeFunctionalApproach("Not a palindrome")); // false
