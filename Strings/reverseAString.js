@@ -81,13 +81,3 @@ function reverseStringWhileLoop(str) {
 }   
 console.log(reverseStringWhileLoop("hello")); // "olleh"
 console.log(reverseStringWhileLoop("JavaScript")); // "tpircSavaJ"
-
-function reverseStringForLoop(str) {
-    let reversed = '';  
-    for (let i = str.length - 1; i >= 0; i--) {
-        reversed += str[i];
-    }
-    return reversed;
-}
-console.log(reverseStringForLoop("hello")); // "olleh"
-console.log(reverseStringForLoop("JavaScript")); // "tpircSavaJ"
