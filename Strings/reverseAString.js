@@ -47,3 +47,17 @@ function reverseStringReduce(str) {
 
 console.log(reverseStringReduce("hello")); // "olleh"
 console.log(reverseStringReduce("JavaScript")); // "tpircSavaJ"
+
+function reverseStringStack(str) {
+    let stack = [];         
+    for (let char of str) {
+        stack.push(char);
+    }
+    let reversed = '';
+    while (stack.length > 0) {
+        reversed += stack.pop();
+    }
+    return reversed;
+}
+console.log(reverseStringStack("hello")); // "olleh"
+console.log(reverseStringStack("JavaScript")); // "tpircSavaJ"
