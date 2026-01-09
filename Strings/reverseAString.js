@@ -91,3 +91,9 @@ function reverseStringForLoop(str) {
 }
 console.log(reverseStringForLoop("hello")); // "olleh"
 console.log(reverseStringForLoop("JavaScript")); // "tpircSavaJ"
+
+function reverseStringMap(str) {
+    return str.split('').map((_, idx, arr) => arr[arr.length - 1 - idx]).join('');
+}   
+console.log(reverseStringMap("hello")); // "olleh"
+console.log(reverseStringMap("JavaScript")); // "tpircSavaJ"
