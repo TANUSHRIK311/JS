@@ -61,3 +61,11 @@ function reverseStringStack(str) {
 }
 console.log(reverseStringStack("hello")); // "olleh"
 console.log(reverseStringStack("JavaScript")); // "tpircSavaJ"
+
+function reverseStringArrayMethods(str) {
+    let arr = Array.from(str);
+    arr.reverse();
+    return arr.join('');
+}
+console.log(reverseStringArrayMethods("hello")); // "olleh"
+console.log(reverseStringArrayMethods("JavaScript")); // "tpircSavaJ"
