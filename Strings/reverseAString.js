@@ -69,3 +69,15 @@ function reverseStringArrayMethods(str) {
 }
 console.log(reverseStringArrayMethods("hello")); // "olleh"
 console.log(reverseStringArrayMethods("JavaScript")); // "tpircSavaJ"
+
+function reverseStringWhileLoop(str) {
+    let reversed = '';
+    let index = str.length - 1; 
+    while (index >= 0) {
+        reversed += str[index];
+        index--;
+    }   
+    return reversed;
+}   
+console.log(reverseStringWhileLoop("hello")); // "olleh"
+console.log(reverseStringWhileLoop("JavaScript")); // "tpircSavaJ"
