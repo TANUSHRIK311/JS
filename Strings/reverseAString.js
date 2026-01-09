@@ -40,3 +40,10 @@ console.log(reverseStringTwoPointer("hello"));
 // "olleh"
 console.log(reverseStringTwoPointer("JavaScript")); 
 // "tpircSavaJ"
+
+function reverseStringReduce(str) {
+    return str.split('').reduce((reversed, char) => char + reversed, '');
+}
+
+console.log(reverseStringReduce("hello")); // "olleh"
+console.log(reverseStringReduce("JavaScript")); // "tpircSavaJ"
