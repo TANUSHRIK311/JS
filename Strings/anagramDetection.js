@@ -100,3 +100,27 @@ function anagramUsingArray(str1, str2) {
 }   
 console.log(anagramUsingArray("listen", "silent")); // true
 console.log(anagramUsingArray("hello", "world")); // false  
+
+//--------------------------------------------------------------------------------------
+
+function anagramUsingSet(str1, str2) {
+    if (str1.length !== str2.length) {
+        return false;
+    }   
+    const charSet = new Set();
+    for (let char of str1) {
+        charSet.add(char);
+    }
+    for (let char of str2) {
+        if (!charSet.has(char)) {
+            return false;
+        }
+        charSet.delete(char);
+    }   
+    return charSet.size === 0;
+}
+console.log(anagramUsingSet("evil", "vile"));
+// true
+console.log(anagramUsingSet("hello", "world"));
+// false
+//--------------------------------------------------------------------------------------
