@@ -124,3 +124,25 @@ console.log(anagramUsingSet("evil", "vile"));
 console.log(anagramUsingSet("hello", "world"));
 // false
 //--------------------------------------------------------------------------------------
+
+function anagramUsingBitManipulation(str1, str2) {
+    if (str1.length !== str2.length) {
+        return false;
+    }       
+    let bitVector = 0;
+    for (let char of str1) {
+        const charCode = char.charCodeAt(0) - 'a'.charCodeAt(0);
+        bitVector ^= (1 << charCode);
+    }
+
+
+    for (let char of str2) {
+        const charCode = char.charCodeAt(0) - 'a'.charCodeAt(0);
+        bitVector ^= (1 << charCode);
+    }
+    return bitVector === 0;
+}
+console.log(anagramUsingBitManipulation("abcde", "edcba")); // true
+console.log(anagramUsingBitManipulation("hello", "world")); // false
+
+//--------------------------------------------------------------------------------------
