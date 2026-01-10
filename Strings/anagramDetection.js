@@ -79,3 +79,24 @@ function anagramUsingCharCount(str1, str2) {
 
 console.log(anagramUsingCharCount("conversation", "voices rant on")); // true
 console.log(anagramUsingCharCount("example", "samples")); // false
+
+//--------------------------------------------------------------------------------------
+
+function anagramUsingArray(str1, str2) {
+    if (str1.length !== str2.length) {
+        return false;
+    }
+    const charArray = new Array(256).fill(0);
+    for (let char of str1) {
+        charArray[char.charCodeAt(0)]++;
+    }
+    for (let char of str2) {
+        charArray[char.charCodeAt(0)]--;
+        if (charArray[char.charCodeAt(0)] < 0) {
+            return false;
+        }   
+    }
+    return true;
+}   
+console.log(anagramUsingArray("listen", "silent")); // true
+console.log(anagramUsingArray("hello", "world")); // false  
