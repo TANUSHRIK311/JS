@@ -24,3 +24,22 @@ function anagramUsingFrequencyCounter(str1, str2) {
 }
 console.log(anagramUsingFrequencyCounter("triangle", "integral")); // true
 console.log(anagramUsingFrequencyCounter("apple", "pale")); // false
+
+function anagramUsingMap(str1, str2) {
+    if (str1.length !== str2.length) {
+        return false;
+    }
+    const map = new Map();
+    for (let char of str1) {
+        map.set(char, (map.get(char) || 0) + 1);
+    }
+    for (let char of str2) {
+        if (!map.has(char)) {
+            return false;
+        }
+        map.set(char, map.get(char) - 1);
+    }
+    return true;
+}
+console.log(anagramUsingMap("triangle", "integral")); // true
+console.log(anagramUsingMap("apple", "pale")); // false
