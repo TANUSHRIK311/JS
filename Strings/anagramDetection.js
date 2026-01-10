@@ -5,7 +5,9 @@ function anagramDetection(str1, str2) {
 }
 console.log(anagramDetection("listen", "silent")); // true
 console.log(anagramDetection("hello", "world")); // false
+
 //--------------------------------------------------------------------------------------
+
 function anagramUsingFrequencyCounter(str1, str2) {
     if (str1.length !== str2.length) {
         return false;
@@ -57,3 +59,23 @@ console.log(anagramDetectionUsingSort("Dormitory", "Dirty room")); // true
 console.log(anagramDetectionUsingSort("Hello", "World")); // false
 
 //--------------------------------------------------------------------------------------
+
+function anagramUsingCharCount(str1, str2) {
+    if (str1.length !== str2.length) {
+        return false;
+    }           
+    const charCount = {};
+    for (let char of str1) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+    for (let char of str2) {
+        if (!charCount[char]) {
+            return false;
+        }   
+        charCount[char]--;
+    }
+    return true;
+}   
+
+console.log(anagramUsingCharCount("conversation", "voices rant on")); // true
+console.log(anagramUsingCharCount("example", "samples")); // false
