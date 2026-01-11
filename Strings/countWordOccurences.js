@@ -92,3 +92,17 @@ function countWordOccurrencesWhile(text, word) {
 }
 console.log(countWordOccurrencesWhile(text, word)); // Output: 3
 //--------------------------------------------------------------------------------------------
+
+function countWordOccurrencesForEach(text, word) {
+    const wordsArray = text.toLowerCase().split(/\W+/);
+    const targetWord = word.toLowerCase();
+    let count = 0;
+    wordsArray.forEach(w => {
+        if (w === targetWord) {
+            count++;
+        }
+    });
+    return count;
+}   
+console.log(countWordOccurrencesForEach(text, word)); // Output: 3
+//--------------------------------------------------------------------------------------------
