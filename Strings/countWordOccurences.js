@@ -60,3 +60,19 @@ function countWordOccurrencesFilter(text, word) {
 console.log(countWordOccurrencesFilter(text, word)); // Output: 3
 
 //--------------------------------------------------------------------------------------------
+
+function countWordOccurrencesLoop(text, word) {
+    const wordsArray = text.toLowerCase().split(/\W+/);
+    const targetWord = word.toLowerCase();
+    let count = 0;  
+    for (let i = 0; i < wordsArray.length; i++) {
+        if (wordsArray[i] === targetWord) {
+            count++;
+        }   
+
+    }
+    return count;
+}   
+console.log(countWordOccurrencesLoop(text, word)); // Output: 3
+
+//--------------------------------------------------------------------------------------------
