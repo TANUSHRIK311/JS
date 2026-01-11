@@ -14,7 +14,7 @@ console.log(countWordOccurrences("Hello world! Hello everyone!", "Hello")); // O
 console.log(countWordOccurrences("JavaScript is great. I love JavaScript.", "JavaScript")); // Output: 2
 console.log(countWordOccurrences("This is a test. This test is only a test.", "test")); // Output: 3
 console.log(countWordOccurrences("No occurrences here.", "missing")); // Output: 0
-//------------------------
+//----------------------------------------------------------------------------------------
 function countWordOccurrencesAlternative(text, word) {
     const wordsArray = text.toLowerCase().split(/\W+/);
     const targetWord = word.toLowerCase();
@@ -28,7 +28,7 @@ function countWordOccurrencesAlternative(text, word) {
 }
 console.log(countWordOccurrencesAlternative(text, word)); // Output: 3
 
-//------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
 
 function countWordOccurrencesReduce(text, word) {
     const wordsArray = text.toLowerCase().split(/\W+/);
@@ -37,3 +37,17 @@ function countWordOccurrencesReduce(text, word) {
 }   
 console.log(countWordOccurrencesReduce(text, word)); // Output: 3
 
+//--------------------------------------------------------------------------------------------
+
+function countWordOccurrencesMap(text, word) {
+    const wordsArray = text.toLowerCase().split(/\W+/);
+    const targetWord = word.toLowerCase();
+    const wordMap = new Map();  
+    for (let w of wordsArray) {
+        wordMap.set(w, (wordMap.get(w) || 0) + 1);
+    }
+    return wordMap.get(targetWord) || 0;
+}
+console.log(countWordOccurrencesMap(text, word)); // Output: 3
+
+//--------------------------------------------------------------------------------------------
