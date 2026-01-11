@@ -51,3 +51,12 @@ function countWordOccurrencesMap(text, word) {
 console.log(countWordOccurrencesMap(text, word)); // Output: 3
 
 //--------------------------------------------------------------------------------------------
+
+function countWordOccurrencesFilter(text, word) {
+    const wordsArray = text.toLowerCase().split(/\W+/);
+    const targetWord = word.toLowerCase();
+    return wordsArray.filter(w => w === targetWord).length;
+}
+console.log(countWordOccurrencesFilter(text, word)); // Output: 3
+
+//--------------------------------------------------------------------------------------------
