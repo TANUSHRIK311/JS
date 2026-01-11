@@ -76,3 +76,19 @@ function countWordOccurrencesLoop(text, word) {
 console.log(countWordOccurrencesLoop(text, word)); // Output: 3
 
 //--------------------------------------------------------------------------------------------
+
+function countWordOccurrencesWhile(text, word) {
+    const wordsArray = text.toLowerCase().split(/\W+/);
+    const targetWord = word.toLowerCase();
+    let count = 0;
+    let index = 0;
+    while (index < wordsArray.length) {
+        if (wordsArray[index] === targetWord) {
+            count++;
+        }   
+        index++;
+    }
+    return count;
+}
+console.log(countWordOccurrencesWhile(text, word)); // Output: 3
+//--------------------------------------------------------------------------------------------
