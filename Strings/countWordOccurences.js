@@ -106,3 +106,30 @@ function countWordOccurrencesForEach(text, word) {
 }   
 console.log(countWordOccurrencesForEach(text, word)); // Output: 3
 //--------------------------------------------------------------------------------------------
+
+function countWordOccurrencesCharByChar(text, word) {
+    const lowerText = text.toLowerCase();
+    const lowerWord = word.toLowerCase();
+    let count = 0;
+    let wordLength = lowerWord.length;
+    let textLength = lowerText.length;
+    for (let i = 0; i <= textLength - wordLength; i++) {
+        let match = true;
+        for (let j = 0; j < wordLength; j++) {
+            if (lowerText[i + j] !== lowerWord[j]) {
+                match = false;
+                break;
+            }
+        }
+        if (match) {
+            // Check word boundaries
+            if ((i === 0 || !/\w/.test(lowerText[i - 1])) &&
+                (i + wordLength === textLength || !/\w/.test(lowerText[i + wordLength]))) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+console.log(countWordOccurrencesCharByChar(text, word)); // Output: 3
+//--------------------------------------------------------------------------------------------
