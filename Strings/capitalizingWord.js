@@ -7,3 +7,18 @@ function capitalizeWord(word) {
 
 console.log(capitalizeWord("hello")); // "Hello"
 console.log(capitalizeWord("javaScript")); // "JavaScript"
+
+//--------------------------------------------------------------------------------------
+
+function capitalizeWordAlternative(word) {  
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }
+    return word.replace(/^./, char => char.toUpperCase());
+}
+
+console.log(capitalizeWordAlternative("hello"));
+console.log(capitalizeWordAlternative("javaScript"));
+
+//--------------------------------------------------------------------------------------
+
