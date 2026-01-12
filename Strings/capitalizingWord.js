@@ -34,3 +34,14 @@ console.log(capitalizeWordArrayMethod("hello")); // "Hello"
 console.log(capitalizeWordArrayMethod("javaScript")); // "JavaScript"
 
 //--------------------------------------------------------------------------------------
+
+function capitalizeWordSliceMethod(word) {
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }
+    return word.slice(0, 1).toUpperCase() + word.slice(1);
+}
+console.log(capitalizeWordSliceMethod("hello")); // "Hello"
+console.log(capitalizeWordSliceMethod("javaScript")); // "JavaScript"
+
+//--------------------------------------------------------------------------------------
