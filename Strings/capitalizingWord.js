@@ -133,3 +133,15 @@ function capitalizeWordUsingMap(word) {
 console.log(capitalizeWordUsingMap("hello")); // "Hello"
 console.log(capitalizeWordUsingMap("javaScript")); // "JavaScript"
 //--------------------------------------------------------------------------------------
+
+function capitalizeWordUsingSpreadOperator(word) {
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }
+    const [firstChar, ...restChars] = [...word];
+    return firstChar.toUpperCase() + restChars.join('');
+}
+console.log(capitalizeWordUsingSpreadOperator("hello")); // "Hello"
+console.log(capitalizeWordUsingSpreadOperator("javaScript")); // "JavaScript"
+
+//--------------------------------------------------------------------------------------
