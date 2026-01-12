@@ -45,3 +45,14 @@ console.log(capitalizeWordSliceMethod("hello")); // "Hello"
 console.log(capitalizeWordSliceMethod("javaScript")); // "JavaScript"
 
 //--------------------------------------------------------------------------------------
+
+function capitalizeWordUsingTemplateLiterals(word) {
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }   
+    return `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
+}
+console.log(capitalizeWordUsingTemplateLiterals("hello")); // "Hello"
+console.log(capitalizeWordUsingTemplateLiterals("javaScript")); // "JavaScript"
+
+//--------------------------------------------------------------------------------------
