@@ -56,3 +56,14 @@ console.log(capitalizeWordUsingTemplateLiterals("hello")); // "Hello"
 console.log(capitalizeWordUsingTemplateLiterals("javaScript")); // "JavaScript"
 
 //--------------------------------------------------------------------------------------
+
+function capitalizeWordUsingArrayDestructuring(word) {
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }   
+    const [firstChar, ...restChars] = word;
+    return firstChar.toUpperCase() + restChars.join('');
+}
+console.log(capitalizeWordUsingArrayDestructuring("hello")); // "Hello"
+console.log(capitalizeWordUsingArrayDestructuring("javaScript")); // "JavaScript"
+//--------------------------------------------------------------------------------------
