@@ -121,3 +121,15 @@ console.log(capitalizeWordUsingLoop("hello"));
 console.log(capitalizeWordUsingLoop("javaScript"));
 
 //--------------------------------------------------------------------------------------
+
+function capitalizeWordUsingMap(word) {
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }
+    const chars = word.split('');
+    const capitalizedChars = chars.map((char, index) => index === 0 ? char.toUpperCase() : char);
+    return capitalizedChars.join('');
+}
+console.log(capitalizeWordUsingMap("hello")); // "Hello"
+console.log(capitalizeWordUsingMap("javaScript")); // "JavaScript"
+//--------------------------------------------------------------------------------------
