@@ -92,3 +92,13 @@ function capitalizeWordUsingIntl(word) {
 console.log(capitalizeWordUsingIntl("hello")); // "Hello"
 console.log(capitalizeWordUsingIntl("javaScript")); // "JavaScript"
 //--------------------------------------------------------------------------------------
+
+function capitalizeWordUsingRegex(word) {
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }   
+    return word.replace(/^(.)/, (match, p1) => p1.toUpperCase());
+}
+console.log(capitalizeWordUsingRegex("hello"));
+console.log(capitalizeWordUsingRegex("javaScript"));;
+//--------------------------------------------------------------------------------------
