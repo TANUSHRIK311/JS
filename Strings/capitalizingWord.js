@@ -102,3 +102,22 @@ function capitalizeWordUsingRegex(word) {
 console.log(capitalizeWordUsingRegex("hello"));
 console.log(capitalizeWordUsingRegex("javaScript"));;
 //--------------------------------------------------------------------------------------
+
+function capitalizeWordUsingLoop(word) {
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }   
+    let capitalizedWord = '';
+    for (let i = 0; i < word.length; i++) {
+        if (i === 0) {
+            capitalizedWord += word[i].toUpperCase();
+        } else {
+            capitalizedWord += word[i];
+        }
+    }   
+    return capitalizedWord;
+}
+console.log(capitalizeWordUsingLoop("hello"));
+console.log(capitalizeWordUsingLoop("javaScript"));
+
+//--------------------------------------------------------------------------------------
