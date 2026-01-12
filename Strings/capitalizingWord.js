@@ -22,3 +22,15 @@ console.log(capitalizeWordAlternative("javaScript"));
 
 //--------------------------------------------------------------------------------------
 
+function capitalizeWordArrayMethod(word) {
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }   
+    let chars = word.split('');
+    chars[0] = chars[0].toUpperCase();
+    return chars.join('');
+}
+console.log(capitalizeWordArrayMethod("hello")); // "Hello"
+console.log(capitalizeWordArrayMethod("javaScript")); // "JavaScript"
+
+//--------------------------------------------------------------------------------------
