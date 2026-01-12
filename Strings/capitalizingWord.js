@@ -67,3 +67,16 @@ function capitalizeWordUsingArrayDestructuring(word) {
 console.log(capitalizeWordUsingArrayDestructuring("hello")); // "Hello"
 console.log(capitalizeWordUsingArrayDestructuring("javaScript")); // "JavaScript"
 //--------------------------------------------------------------------------------------
+
+function capitalizeWordUsingCharCode(word) {
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }   
+    const firstCharCode = word.charCodeAt(0);
+    const capitalizedChar = String.fromCharCode(firstCharCode >= 97 && firstCharCode <= 122 ? firstCharCode - 32 : firstCharCode);
+    return capitalizedChar + word.slice(1);
+}   
+console.log(capitalizeWordUsingCharCode("hello")); // "Hello"
+console.log(capitalizeWordUsingCharCode("javaScript")); // "JavaScript"
+
+//--------------------------------------------------------------------------------------
