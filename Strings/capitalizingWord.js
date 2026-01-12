@@ -80,3 +80,15 @@ console.log(capitalizeWordUsingCharCode("hello")); // "Hello"
 console.log(capitalizeWordUsingCharCode("javaScript")); // "JavaScript"
 
 //--------------------------------------------------------------------------------------
+
+function capitalizeWordUsingIntl(word) {
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }   
+    const firstChar = word.charAt(0);
+    const capitalizedChar = new Intl.Collator('en', { sensitivity: 'base' }).compare(firstChar, firstChar.toUpperCase()) === 0 ? firstChar : firstChar.toUpperCase();
+    return capitalizedChar + word.slice(1);
+}
+console.log(capitalizeWordUsingIntl("hello")); // "Hello"
+console.log(capitalizeWordUsingIntl("javaScript")); // "JavaScript"
+//--------------------------------------------------------------------------------------
