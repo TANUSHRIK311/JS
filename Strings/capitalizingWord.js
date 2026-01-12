@@ -145,3 +145,17 @@ console.log(capitalizeWordUsingSpreadOperator("hello")); // "Hello"
 console.log(capitalizeWordUsingSpreadOperator("javaScript")); // "JavaScript"
 
 //--------------------------------------------------------------------------------------
+
+function capitalizeWordUsingConditional(word) {
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }   
+    const firstChar = word.charAt(0);
+    const capitalizedChar = firstChar >= 'a' && firstChar <= 'z' ? firstChar.toUpperCase() : firstChar;
+    return capitalizedChar + word.slice(1);
+}
+console.log(capitalizeWordUsingConditional("hello")); // "Hello"
+console.log(capitalizeWordUsingConditional("javaScript")); // "JavaScript"
+
+//--------------------------------------------------------------------------------------
+
