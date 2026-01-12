@@ -159,3 +159,15 @@ console.log(capitalizeWordUsingConditional("javaScript")); // "JavaScript"
 
 //--------------------------------------------------------------------------------------
 
+
+function capitalizeWordUsingArrayFill(word) {
+    if (typeof word !== 'string' || word.length === 0) {
+        return '';
+    }   
+    const chars = Array.from(word);
+    chars.fill(chars[0].toUpperCase(), 0, 1);
+    return chars.join('');
+}
+console.log(capitalizeWordUsingArrayFill("hello")); // "Hello"
+console.log(capitalizeWordUsingArrayFill("javaScript")); // "JavaScript"
+
