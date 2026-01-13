@@ -24,3 +24,8 @@ const arrayWithDuplicates3 = ['apple', 'banana', 'apple', 'orange', 'banana'];
 const uniqueArray3 = removeDuplicates(arrayWithDuplicates3);
 console.log(uniqueArray3); // Output: ['apple', 'banana', 'orange']
 const arrayWithDuplicates4 = ['apple', 'banana', 'apple', 'orange', 'banana'];
+
+const uniqueArray4 = removeDuplicates(arrayWithDuplicates4);
+console.log(uniqueArray4); // Output: ['apple', 'banana', 'orange']
+
+
