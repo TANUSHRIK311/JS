@@ -84,3 +84,22 @@ function longestCommonPrefix4(strs) {
 const strings10 = ["interspecies", "interstellar", "interstate"];
 const commonPrefix10 = longestCommonPrefix4(strings10);
 console.log(commonPrefix10); // Output: "inters"
+
+function commonPrefixBetweenTwo(str1, str2) {
+    let minLength = Math.min(str1.length, str2.length);
+    let i = 0;      
+    while (i < minLength && str1[i] === str2[i]) {
+        i++;
+    }   
+    return str1.substring(0, i);
+}   
+// Example usage:
+const strings11 = ["flower", "flow", "flight"];
+const commonPrefix11 = longestCommonPrefix4(strings11);
+console.log(commonPrefix11); // Output: "fl"
+const strings12 = ["dog", "racecar", "car"];
+const commonPrefix12 = longestCommonPrefix4(strings12);
+console.log(commonPrefix12); // Output: ""
+const strings13 = ["interspecies", "interstellar", "interstate"];
+const commonPrefix13 = longestCommonPrefix4(strings13);
+console.log(commonPrefix13); // Output: "inters"
