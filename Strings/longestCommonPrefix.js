@@ -69,3 +69,18 @@ console.log(commonPrefix8); // Output: ""
 const strings9 = ["interspecies", "interstellar", "interstate"];
 const commonPrefix9 = longestCommonPrefix3(strings9);
 console.log(commonPrefix9); // Output: "inters"
+
+
+function longestCommonPrefix4(strs) {
+    if (strs.length === 0) return "";       
+    let prefix = strs[0];      
+    for (let i = 1; i < strs.length; i++) {
+        prefix = commonPrefixBetweenTwo(prefix, strs[i]);
+        if (prefix === "") return "";
+    }
+    return prefix;
+}
+
+const strings10 = ["interspecies", "interstellar", "interstate"];
+const commonPrefix10 = longestCommonPrefix4(strings10);
+console.log(commonPrefix10); // Output: "inters"
