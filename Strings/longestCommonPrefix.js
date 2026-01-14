@@ -20,3 +20,28 @@ const strings3 = ["interspecies", "interstellar", "interstate"];
 const commonPrefix3 = longestCommonPrefix(strings3);
 console.log(commonPrefix3); // Output: "inters"4
 
+//---------------------------------------------------------------------
+
+var longestCommonPrefix2 = function(strs) {
+    strs.sort();
+    let first = strs[0];
+    let last = strs[strs.length - 1];
+    let i = 0;
+
+    while (i < first.length && first[i] === last[i]) {
+        i++;
+    }
+
+    return first.slice(0, i);
+};
+ 
+// Example usage:
+const strings4 = ["flower", "flow", "flight"];
+const commonPrefix4 = longestCommonPrefix2(strings4);
+console.log(commonPrefix4); // Output: "fl"
+const strings5 = ["dog", "racecar", "car"];
+const commonPrefix5 = longestCommonPrefix2(strings5);
+console.log(commonPrefix5); // Output: ""
+const strings6 = ["interspecies", "interstellar", "interstate"];
+const commonPrefix6 = longestCommonPrefix2(strings6);
+console.log(commonPrefix6); // Output: "inters"
