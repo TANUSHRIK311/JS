@@ -103,3 +103,8 @@ console.log(commonPrefix12); // Output: ""
 const strings13 = ["interspecies", "interstellar", "interstate"];
 const commonPrefix13 = longestCommonPrefix4(strings13);
 console.log(commonPrefix13); // Output: "inters"
+
+ 
+
+
+
