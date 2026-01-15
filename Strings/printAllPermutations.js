@@ -24,4 +24,26 @@ console.log(printAllPermutations("abc"));
 //--------------------------------------------------------------------- 
 
 
- 
+ function printAllPermutationsUnique(str) {
+    const results = new Set(); 
+    const used = Array(str.length).fill(false);
+    const chars = str.split('').sort();
+
+    function backtrack(currentPermutation) {
+        if (currentPermutation.length === str.length) {
+            results.add(currentPermutation.join(''));
+            return;
+        }
+        for (let i = 0; i < str.length; i++) {
+            if (used[i]) continue;
+            used[i] = true;
+            currentPermutation.push(chars[i]);
+            backtrack(currentPermutation);
+            currentPermutation.pop();
+            used[i] = false;
+        }
+    }
+    backtrack([]);
+    return Array.from(results);
+}   
+ console.log(printAllPermutationsUnique("aabc"));
