@@ -16,12 +16,7 @@ function findSubString(mainString, subString) {
     }
     return -1;
 }
-            const index = Math.floor(k / factorial(j - 1));
-            permutation += temp[index];
-            temp.splice(index, 1);
-            k %= factorial(j - 1);
-    return Array.from(results);
-}   
+
  console.log(findSubString("hello world", "world")); // Output: 6
  console.log(findSubString("hello world", "planet")); // Output: -1
  console.log(findSubString("abcdef", "def")); // Output: 3
