@@ -64,8 +64,34 @@ function findSubStringCount(mainString, subString) {
     }
     return count;
 }   
-    return prefix;
 // Example usage:
 console.log(findSubStringCount("hello world world", "world")); // Output: 2
 
 //--------------------------------------------------------------------- 
+
+function findSubStringAllIndices(mainString, subString) {
+    if (typeof mainString !== 'string' || typeof subString !== 'string') {
+        throw new Error('Both arguments must be strings.');
+    }   
+    const mainLength = mainString.length;
+    const subLength = subString.length;
+    const indices = []; 
+    if (subLength === 0) {
+        for (let i = 0; i <= mainLength; i++) {
+            indices.push(i);
+        }
+        return indices;
+    }
+    for (let i = 0; i <= mainLength - subLength; i++) {
+        let j = 0;
+        while (j < subLength && mainString[i + j] === subString[j]) {
+            j++;
+        }   
+        if (j === subLength) {
+            indices.push(i);
+        }   
+    }
+    return indices;
+}   
+// Example usage:
+console.log(findSubStringAllIndices("hello world world", "world")); // Output: [6, 12]
