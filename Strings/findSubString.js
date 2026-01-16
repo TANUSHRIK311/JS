@@ -120,3 +120,30 @@ function findSubStringIgnoreCase(mainString, subString) {
     return -1;
 }
 console.log(findSubStringIgnoreCase("Hello World", "world")); // Output: 6
+
+//---------------------------------------------------------------------
+
+function findSubStringReverse(mainString, subString) {
+    if (typeof mainString !== 'string' || typeof subString !== 'string') {
+        throw new Error('Both arguments must be strings.');
+    }   
+    const reversedMain = mainString.split('').reverse().join('');
+    const reversedSub = subString.split('').reverse().join('');
+    const mainLength = reversedMain.length;
+    const subLength = reversedSub.length;
+    if (subLength === 0) return mainLength;
+    for (let i = 0; i <= mainLength - subLength; i++) { 
+        let j = 0;
+        while (j < subLength && reversedMain[i + j] === reversedSub[j]) {
+            j++;
+        }
+        if (j === subLength) {
+            return mainLength - i - subLength;
+        }
+    }
+    return -1;
+}
+
+console.log(findSubStringReverse("hello world", "world")); // Output: 6
+console.log(findSubStringReverse("hello world", "hello")); // Output: 0
+console.log(findSubStringReverse("hello world", "planet")); // Output: -1
