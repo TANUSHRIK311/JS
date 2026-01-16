@@ -95,3 +95,28 @@ function findSubStringAllIndices(mainString, subString) {
 }   
 // Example usage:
 console.log(findSubStringAllIndices("hello world world", "world")); // Output: [6, 12]
+
+
+//---------------------------------------------------------------------
+
+function findSubStringIgnoreCase(mainString, subString) {
+    if (typeof mainString !== 'string' || typeof subString !== 'string') {
+        throw new Error('Both arguments must be strings.');
+    }       
+    const lowerMain = mainString.toLowerCase(); 
+    const lowerSub = subString.toLowerCase();
+    const mainLength = lowerMain.length;
+    const subLength = lowerSub.length;
+    if (subLength === 0) return 0;
+    for (let i = 0; i <= mainLength - subLength; i++) {
+        let j = 0;
+        while (j < subLength && lowerMain[i + j] === lowerSub[j]) {
+            j++;
+        }
+        if (j === subLength) {
+            return i;
+        }
+    }
+    return -1;
+}
+console.log(findSubStringIgnoreCase("Hello World", "world")); // Output: 6
