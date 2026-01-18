@@ -72,3 +72,34 @@ function longestPalindromeManacher(s) {
 // Example usage:
 console.log(longestPalindromeManacher("babad")); // "bab" or "aba"
 console.log(longestPalindromeManacher("cbbd"));  // "bb"
+
+//---------------------------------------------------------------------
+
+function longestPalindromeDP(s) {
+    const n = s.length;
+    if (n === 0) return "";
+    const dp = Array.from(Array(n), () => Array(n).fill(false));
+    let start = 0;
+    let maxLength = 1;  
+    for (let i = 0; i < n; i++) {
+        dp[i][i] = true; // Every single character is a palindrome
+    }
+    for (let length = 2; length <= n; length++) {
+        for (let i = 0; i < n - length + 1; i++) {
+            const j = i + length - 1;   
+            if (s[i] === s[j]) {
+                if (length === 2 || dp[i + 1][j - 1]) {
+                    dp[i][j] = true;        
+                    if (length > maxLength) {
+                        start = i;
+                        maxLength = length;
+                    }   
+                }
+            }
+        }
+    }
+    return s.substring(start, start + maxLength);
+}
+// Example usage:
+console.log(longestPalindromeDP("sasat")); // Output: "sas" 
+console.log(longestPalindromeDP("tatto"));  // Output: "tat"
