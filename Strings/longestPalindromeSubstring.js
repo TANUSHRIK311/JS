@@ -127,3 +127,6 @@ function isPalindrome(str) {
 // Example usage:
 console.log(longestPalindromeBruteForce("forgeeksskeegfor")); // Output: "geeksskeeg"
 console.log(longestPalindromeBruteForce("abacdfgdcaba")); // Output: "aba"
+
+console.log(longestPalindromeBruteForce("abacdfgdcabba")); // Output: "abba"    
+console.log(longestPalindromeBruteForce("a")); // Output: "a"
