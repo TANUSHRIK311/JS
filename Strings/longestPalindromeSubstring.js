@@ -26,6 +26,49 @@ function expandAroundCenter(s, left, right) {
 console.log(longestPalindromeSubstring("babad")); // Output: "bab" or "aba"
 console.log(longestPalindromeSubstring("cbbd"));  // Output: "bb"
 
-//---------------------------------------------------------------------
+//---------------------------------------------------------------------------
 
 
+function longestPalindromeManacher(s) {
+    if (!s || s.length <= 1) return s;
+
+    // 1. Preprocess: "aba" -> "#a#b#a#"
+    let T = "#" + s.split("").join("#") + "#";
+    let n = T.length;
+    let P = new Array(n).fill(0); // Stores radius of palindrome at each center
+    let C = 0, R = 0; // Current center and right boundary
+    let maxLen = 0, centerIndex = 0;
+
+    for (let i = 0; i < n; i++) {
+        // Use mirror property to skip redundant checks
+        let mirror = 2 * C - i;
+        if (i < R) {
+            P[i] = Math.min(R - i, P[mirror]);
+        }
+
+        // Attempt to expand around center i
+        while (i + 1 + P[i] < n && i - 1 - P[i] >= 0 && T[i + 1 + P[i]] === T[i - 1 - P[i]]) {
+            P[i]++;
+        }
+
+        // Update boundary if new palindrome extends further right
+        if (i + P[i] > R) {
+            C = i;
+            R = i + P[i];
+        }
+
+        // Track the absolute longest
+        if (P[i] > maxLen) {
+            maxLen = P[i];
+            centerIndex = i;
+        }
+    }
+
+    // Extract the substring from the original string
+    let start = (centerIndex - maxLen) / 2;
+    return s.substring(start, start + maxLen);
+}
+
+// Example usage:
+console.log(longestPalindromeManacher("babad")); // "bab" or "aba"
+console.log(longestPalindromeManacher("cbbd"));  // "bb"
