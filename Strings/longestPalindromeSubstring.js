@@ -103,3 +103,27 @@ function longestPalindromeDP(s) {
 // Example usage:
 console.log(longestPalindromeDP("sasat")); // Output: "sas" 
 console.log(longestPalindromeDP("tatto"));  // Output: "tat"
+
+//---------------------------------------------------------------------
+
+function longestPalindromeBruteForce(s) {
+    let maxLength = 0;
+    let longestPal = "";    
+    for (let i = 0; i < s.length; i++) {
+        for (let j = i + 1; j <= s.length; j++) {
+            const substr = s.substring(i, j);
+            if (isPalindrome(substr) && substr.length > maxLength) {
+                maxLength = substr.length;
+                longestPal = substr;
+            }   
+        }           
+    }
+    return longestPal;
+}
+function isPalindrome(str) {
+    return str === str.split('').reverse().join('');
+}
+
+// Example usage:
+console.log(longestPalindromeBruteForce("forgeeksskeegfor")); // Output: "geeksskeeg"
+console.log(longestPalindromeBruteForce("abacdfgdcaba")); // Output: "aba"
