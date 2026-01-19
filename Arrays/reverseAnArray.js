@@ -145,3 +145,17 @@ const arrayForEach = [8,16,24,32,40];
 console.log(reverseArrayUsingForEach(arrayForEach)); // Output: [40,32,24,16,8]
 
 //--------------------------------------------------------------------
+
+function reverseArrayUsingSplice(arr) {
+    const reversedArr = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reversedArr.splice(reversedArr.length, 0, arr[i]);
+    }
+    return reversedArr;
+}
+// Example usage:       
+const arraySplice = [4,8,12,16,20];
+console.log(reverseArrayUsingSplice(arraySplice)); // Output: [20,16,12,8,4]
+
+//--------------------------------------------------------------------
+
