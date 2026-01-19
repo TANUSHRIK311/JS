@@ -84,3 +84,16 @@ function reverseArrayUsingStack(arr) {
 // Example usage:
 const arrayStack = [100,200,300,400,500];
 console.log(reverseArrayUsingStack(arrayStack)); // Output: [500,400,300,200,100]
+
+//--------------------------------------------------------------------
+
+function reverseArrayUsingLoop(arr) {
+    const reversedArr = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reversedArr.push(arr[i]);
+    }
+    return reversedArr;
+}
+// Example usage:
+const arrayLoop = [7,14,21,28,35];
+console.log(reverseArrayUsingLoop(arrayLoop)); // Output: [35,28,21,14,7]   
