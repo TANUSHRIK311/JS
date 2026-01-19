@@ -171,3 +171,18 @@ const arrayConcat = [9,18,27,36,45];
 console.log(reverseArrayUsingConcat(arrayConcat)); // Output: [45,36,27,18,9]
 
 //--------------------------------------------------------------------
+
+function reverseArrayUsingDestructuring(arr) {
+    const reversedArr = []; 
+    for (let i = arr.length - 1; i >= 0; i--) {
+        const [item] = [arr[i]];
+        reversedArr.push(item);
+    }
+    return reversedArr;
+}
+// Example usage:
+const arrayDestructuring = [6,12,18,24,30];
+console.log(reverseArrayUsingDestructuring(arrayDestructuring)); // Output: [30,24,18,12,6]
+
+//--------------------------------------------------------------------
+
