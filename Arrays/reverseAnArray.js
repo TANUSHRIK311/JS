@@ -200,3 +200,13 @@ const arrayRecursion = [13,26,39,52,65];
 console.log(reverseArrayUsingRecursion(arrayRecursion)); // Output: [65,52,39,26,13]
 
 //--------------------------------------------------------------------
+
+function reverseArrayUsingFlatMap(arr) {
+    return arr.flatMap((_, index) => arr[arr.length - 1 - index]);
+}   
+// Example usage:
+const arrayFlatMap = [21,42,63,84,105];
+console.log(reverseArrayUsingFlatMap(arrayFlatMap)); // Output: [105,84,63,42,21]
+
+//--------------------------------------------------------------------
+
