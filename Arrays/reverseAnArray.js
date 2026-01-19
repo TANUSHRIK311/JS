@@ -67,3 +67,20 @@ function reverseArrayUsingReduce(arr) {
 // Example usage:
 const arrayReduce = [10,20,30,40,50];
 console.log(reverseArrayUsingReduce(arrayReduce)); // Output: [50,40,30,20,10]
+
+//--------------------------------------------------------------------
+
+function reverseArrayUsingStack(arr) {
+    const stack = [];   
+    for (let i = 0; i < arr.length; i++) {
+        stack.push(arr[i]);
+    }
+    const reversedArr = [];   
+    while (stack.length > 0) {
+        reversedArr.push(stack.pop());
+    }   
+    return reversedArr;
+}
+// Example usage:
+const arrayStack = [100,200,300,400,500];
+console.log(reverseArrayUsingStack(arrayStack)); // Output: [500,400,300,200,100]
