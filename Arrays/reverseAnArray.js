@@ -60,3 +60,10 @@ const arrayRecursive = [2,4,6,8,10];
 console.log(reverseArrayRecursive(arrayRecursive)); // Output: [10,8,6,4,2]
 
 //----------------------------------------------------------------------------
+
+function reverseArrayUsingReduce(arr) {
+    return arr.reduce((acc, curr) => [curr, ...acc], []);
+}   
+// Example usage:
+const arrayReduce = [10,20,30,40,50];
+console.log(reverseArrayUsingReduce(arrayReduce)); // Output: [50,40,30,20,10]
