@@ -117,3 +117,16 @@ const arrayMap = [11,22,33,44,55];
 console.log(reverseArrayUsingMap(arrayMap)); // Output: [55,44,33,22,11]
 
 //--------------------------------------------------------------------
+
+function reverseArrayUsingWhile(arr) {
+    const reversedArr = [];
+    let index = arr.length - 1; 
+    while (index >= 0) {    
+        reversedArr.push(arr[index]);
+        index--;
+    }
+    return reversedArr;
+}
+// Example usage:
+const arrayWhile = [5,10,15,20,25];
+console.log(reverseArrayUsingWhile(arrayWhile)); // Output: [25,20,15,10,5]
