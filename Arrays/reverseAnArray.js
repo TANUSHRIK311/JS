@@ -186,3 +186,17 @@ console.log(reverseArrayUsingDestructuring(arrayDestructuring)); // Output: [30,
 
 //--------------------------------------------------------------------
 
+function reverseArrayUsingRecursion(arr) {
+    function helper(index) {
+        if (index < 0) {
+            return [];
+        }
+        return [arr[index]].concat(helper(index - 1));
+    }
+    return helper(arr.length - 1);
+}
+// Example usage:   
+const arrayRecursion = [13,26,39,52,65];
+console.log(reverseArrayUsingRecursion(arrayRecursion)); // Output: [65,52,39,26,13]
+
+//--------------------------------------------------------------------
