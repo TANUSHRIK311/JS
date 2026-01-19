@@ -97,3 +97,14 @@ function reverseArrayUsingLoop(arr) {
 // Example usage:
 const arrayLoop = [7,14,21,28,35];
 console.log(reverseArrayUsingLoop(arrayLoop)); // Output: [35,28,21,14,7]   
+
+//--------------------------------------------------------------------
+
+function reverseArrayUsingSlice(arr) {
+    return arr.slice().reverse();
+}
+// Example usage:
+const arraySlice = [3,6,9,12,15];
+console.log(reverseArrayUsingSlice(arraySlice)); // Output: [15,12,9,6,3]
+
+//--------------------------------------------------------------------
