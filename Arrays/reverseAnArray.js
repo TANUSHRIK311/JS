@@ -108,3 +108,12 @@ const arraySlice = [3,6,9,12,15];
 console.log(reverseArrayUsingSlice(arraySlice)); // Output: [15,12,9,6,3]
 
 //--------------------------------------------------------------------
+
+function reverseArrayUsingMap(arr) {
+    return arr.map((_, index) => arr[arr.length - 1 - index]);
+}   
+// Example usage:
+const arrayMap = [11,22,33,44,55];
+console.log(reverseArrayUsingMap(arrayMap)); // Output: [55,44,33,22,11]
+
+//--------------------------------------------------------------------
