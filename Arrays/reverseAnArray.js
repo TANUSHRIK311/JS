@@ -130,3 +130,18 @@ function reverseArrayUsingWhile(arr) {
 // Example usage:
 const arrayWhile = [5,10,15,20,25];
 console.log(reverseArrayUsingWhile(arrayWhile)); // Output: [25,20,15,10,5]
+
+//--------------------------------------------------------------------
+
+function reverseArrayUsingForEach(arr) {
+    const reversedArr = [];
+    arr.forEach((item) => {
+        reversedArr.unshift(item);
+    });
+    return reversedArr;
+}
+// Example usage:
+const arrayForEach = [8,16,24,32,40];
+console.log(reverseArrayUsingForEach(arrayForEach)); // Output: [40,32,24,16,8]
+
+//--------------------------------------------------------------------
