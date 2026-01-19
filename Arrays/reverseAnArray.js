@@ -43,3 +43,20 @@ function reverseArrayNew(arr) {
 // Example usage:
 const arrayNew = [1,3,5,7,9,11,13,15,17,19];
 console.log(reverseArrayNew(arrayNew)); // Output: [19,17,15,13,11,9,7,5,3,1]
+
+//--------------------------------------------------------------------
+
+function reverseArrayRecursive(arr) {
+    if (arr.length === 0) {
+        return [];
+    }
+let syntax = [arr[arr.length - 1]].concat(reverseArrayRecursive(arr.slice(0, arr.length - 1)));
+console.log("SYNTAX", syntax);
+
+return syntax;
+}
+// Example usage:
+const arrayRecursive = [2,4,6,8,10];
+console.log(reverseArrayRecursive(arrayRecursive)); // Output: [10,8,6,4,2]
+
+//----------------------------------------------------------------------------
