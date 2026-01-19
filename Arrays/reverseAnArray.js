@@ -159,3 +159,15 @@ console.log(reverseArrayUsingSplice(arraySplice)); // Output: [20,16,12,8,4]
 
 //--------------------------------------------------------------------
 
+function reverseArrayUsingConcat(arr) {
+    let reversedArr = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reversedArr = reversedArr.concat(arr[i]);
+    }   
+    return reversedArr;
+}
+// Example usage:
+const arrayConcat = [9,18,27,36,45];
+console.log(reverseArrayUsingConcat(arrayConcat)); // Output: [45,36,27,18,9]
+
+//--------------------------------------------------------------------
