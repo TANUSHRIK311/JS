@@ -210,3 +210,106 @@ console.log(reverseArrayUsingFlatMap(arrayFlatMap)); // Output: [105,84,63,42,21
 
 //--------------------------------------------------------------------
 
+function reverseArrayUsingReduceRight(arr) {
+    return arr.reduceRight((acc, curr) => {
+        acc.push(curr);
+        return acc;
+    }, []);
+}   
+// Example usage:
+const arrayReduceRight = [2,4,6,8,10];
+console.log(reverseArrayUsingReduceRight(arrayReduceRight)); // Output: [10,8,6,4,2]
+
+//--------------------------------------------------------------------
+
+function reverseArrayUsingGenerator(arr) {
+    function* generator() {
+        for (let i = arr.length - 1; i >= 0; i--) {
+            yield arr[i];
+        }
+    }
+    return Array.from(generator());
+}
+// Example usage:
+const arrayGenerator = [1,3,5,7,9];
+console.log(reverseArrayUsingGenerator(arrayGenerator)); // Output: [9,7,5,3,1]
+
+//--------------------------------------------------------------------
+
+function reverseArrayUsingStackMethod(arr) {
+
+    const stack = [];   
+    arr.forEach(item => stack.push(item));   
+    const reversedArr = []; 
+    while (stack.length) {
+        reversedArr.push(stack.pop());
+    }
+    return reversedArr;
+}
+// Example usage:
+const arrayStackMethod = [15,30,45,60,75];
+console.log(reverseArrayUsingStackMethod(arrayStackMethod)); // Output: [75,60,45,30,15]
+
+//--------------------------------------------------------------------
+
+function reverseArrayUsingTempVariable(arr) {
+    const reversedArr = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        const temp = arr[i];
+        reversedArr.push(temp);
+    }
+    return reversedArr;
+}
+// Example usage:           
+const arrayTempVariable = [33,66,99,132,165];
+console.log(reverseArrayUsingTempVariable(arrayTempVariable)); // Output: [165,132,99,66,33]
+
+//--------------------------------------------------------------------
+
+function reverseArrayUsingIndexing(arr) {
+    const reversedArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        reversedArr[i] = arr[arr.length - 1 - i];
+    }
+    return reversedArr;
+}
+// Example usage:
+const arrayIndexing = [7,14,21,28,35];
+console.log(reverseArrayUsingIndexing(arrayIndexing)); // Output: [35,28,21,14,7]
+
+//--------------------------------------------------------------------
+function reverseArrayUsingCopy(arr) {
+    const arrCopy = Array.from(arr);
+    const reversedArr = [];     
+    for (let i = arrCopy.length - 1; i >= 0; i--) {
+        reversedArr.push(arrCopy[i]);
+    }
+    return reversedArr;
+}
+// Example usage:
+const arrayCopy = [18,36,54,72,90];
+console.log(reverseArrayUsingCopy(arrayCopy)); // Output: [90,72,54,36,18]
+
+//--------------------------------------------------------------------
+
+function reverseArrayUsingLoopingConstruct(arr) {
+    const reversedArr = [];
+    for (const item of arr.slice().reverse()) {
+        reversedArr.push(item);
+    }
+    return reversedArr;
+}
+// Example usage:
+const arrayLoopingConstruct = [12,24,36,48,60];
+console.log(reverseArrayUsingLoopingConstruct(arrayLoopingConstruct)); // Output: [60,48,36,24,12]
+
+//--------------------------------------------------------------------
+
+function reverseArrayUsingArrayFrom(arr) {
+    return Array.from({ length: arr.length }, (_, i) => arr[arr.length - 1 - i]);
+}
+// Example usage:
+const arrayFrom = [5,10,15,20,25];
+console.log(reverseArrayUsingArrayFrom(arrayFrom)); // Output: [25,20,15,10,5]
+
+//--------------------------------------------------------------------
