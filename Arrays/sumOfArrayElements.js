@@ -71,3 +71,16 @@ console.log(sumOfArrayElementsMap(arrayMap)); // Output: 15
 
 //--------------------------------------------------------------------
 
+function sumOfArrayElementsFilter(arr) {
+    let sum = 0;
+    arr.filter(num => {
+        sum += num;
+        return false; // filter requires a return value
+    });
+    return sum;
+}       
+// Example usage:
+const arrayFilter = [1, 2, 3, 4, 5];
+console.log(sumOfArrayElementsFilter(arrayFilter)); // Output: 15
+
+//--------------------------------------------------------------------
