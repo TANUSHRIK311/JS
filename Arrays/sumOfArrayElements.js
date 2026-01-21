@@ -22,3 +22,12 @@ const arrayRecursive = [1, 2, 3, 4, 5];
 console.log(sumOfArrayElementsRecursive(arrayRecursive)); // Output: 15
 
 //--------------------------------------------------------------------
+
+function sumOfArrayElementsReduce(arr) {
+    return arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+}   
+// Example usage:   
+const arrayReduce = [1, 2, 3, 4, 5];
+console.log(sumOfArrayElementsReduce(arrayReduce)); // Output: 15
+
+//--------------------------------------------------------------------
