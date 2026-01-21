@@ -97,3 +97,17 @@ const arrayForEach = [1, 2, 3, 4, 5];
 console.log(sumOfArrayElementsForEach(arrayForEach)); // Output: 15
 
 //--------------------------------------------------------------------
+
+ function sumOfArrayElementsConcat(arr) {
+    let sum = 0;
+    let tempArr = [].concat(arr);
+    for (let i = 0; i < tempArr.length; i++) {
+        sum += tempArr[i];
+    }
+    return sum;
+}
+// Example usage:   
+const arrayConcat = [1, 2, 3, 4, 5];
+console.log(sumOfArrayElementsConcat(arrayConcat)); // Output: 15   
+
+//--------------------------------------------------------------------
