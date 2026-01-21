@@ -44,3 +44,19 @@ const arrayForOf = [1, 2, 3, 4, 5];
 console.log(sumOfArrayElementsForOf(arrayForOf)); // Output: 15
 
 //--------------------------------------------------------------------
+
+function sumOfArrayElementsWhile(arr) {
+    let sum = 0;
+    let i = 0;
+    while (i < arr.length) {
+        sum += arr[i];
+        i++;
+    }
+    return sum;
+}
+// Example usage:
+const arrayWhile = [1, 2, 3, 4, 5];
+console.log(sumOfArrayElementsWhile(arrayWhile)); // Output: 15
+
+//--------------------------------------------------------------------
+
