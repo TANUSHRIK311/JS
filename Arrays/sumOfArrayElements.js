@@ -84,3 +84,16 @@ const arrayFilter = [1, 2, 3, 4, 5];
 console.log(sumOfArrayElementsFilter(arrayFilter)); // Output: 15
 
 //--------------------------------------------------------------------
+
+function sumOfArrayElementsForEach(arr) {
+    let sum = 0;
+    arr.forEach(num => {
+        sum += num;
+    });         
+    return sum;
+}
+// Example usage:   
+const arrayForEach = [1, 2, 3, 4, 5];
+console.log(sumOfArrayElementsForEach(arrayForEach)); // Output: 15
+
+//--------------------------------------------------------------------
