@@ -31,3 +31,16 @@ const arrayReduce = [1, 2, 3, 4, 5];
 console.log(sumOfArrayElementsReduce(arrayReduce)); // Output: 15
 
 //--------------------------------------------------------------------
+
+function sumOfArrayElementsForOf(arr) {
+    let sum = 0;
+    for (const num of arr) {
+        sum += num;
+    }
+    return sum;
+}
+// Example usage:   
+const arrayForOf = [1, 2, 3, 4, 5];
+console.log(sumOfArrayElementsForOf(arrayForOf)); // Output: 15
+
+//--------------------------------------------------------------------
