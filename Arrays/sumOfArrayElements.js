@@ -60,3 +60,14 @@ console.log(sumOfArrayElementsWhile(arrayWhile)); // Output: 15
 
 //--------------------------------------------------------------------
 
+function sumOfArrayElementsMap(arr) {
+    let sum = 0;
+    arr.map(num => sum += num);
+    return sum;
+}
+// Example usage:   
+const arrayMap = [1, 2, 3, 4, 5];
+console.log(sumOfArrayElementsMap(arrayMap)); // Output: 15
+
+//--------------------------------------------------------------------
+
