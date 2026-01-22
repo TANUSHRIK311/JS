@@ -132,3 +132,6 @@ function findDuplicatesForEach(arr) {
 // Example usage:
 const arrayForEach = [1, 2, 3, 4, 5, 3, 2, 1];
 console.log(findDuplicatesForEach(arrayForEach)); // Output: [1, 2, 3]
+
+//--------------------------------------------------------------------
+
