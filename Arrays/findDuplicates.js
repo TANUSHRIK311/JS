@@ -15,3 +15,12 @@ const array = [1, 2, 3, 4, 5, 3, 2, 1];
 console.log(findDuplicates(array)); // Output: [1, 2, 3]
 
 //--------------------------------------------------------------------
+
+function findDuplicatesFilter(arr) {
+    return arr.filter((item, index) => arr.indexOf(item) !== index && arr.indexOf(item) === index);
+}   
+// Example usage:
+const arrayFilter = [1, 2, 3, 4, 5, 3, 2, 1];
+console.log(findDuplicatesFilter(arrayFilter)); // Output: [1, 2, 3]
+
+//--------------------------------------------------------------------
