@@ -1,0 +1,17 @@
+function findDuplicates(arr) {  
+    const seen = new Set();
+    const duplicates = new Set();
+    for (const item of arr) {   
+        if (seen.has(item)) {
+            duplicates.add(item);
+        } else {
+            seen.add(item);
+        }   
+    }
+    return Array.from(duplicates);
+}
+// Example usage:   
+const array = [1, 2, 3, 4, 5, 3, 2, 1];
+console.log(findDuplicates(array)); // Output: [1, 2, 3]
+
+//--------------------------------------------------------------------
