@@ -38,6 +38,7 @@ const arrayReduce = [1, 2, 3, 4, 5, 3, 2, 1];
 console.log(findDuplicatesReduce(arrayReduce)); // Output: [1, 2, 3]
 
 //--------------------------------------------------------------------
+
 function findDuplicatesForLoop(arr) {
     const duplicates = [];
     for (let i = 0; i < arr.length; i++) {
@@ -52,5 +53,27 @@ function findDuplicatesForLoop(arr) {
 // Example usage:
 const arrayForLoop = [1, 2, 3, 4, 5, 3, 2, 1];
 console.log(findDuplicatesForLoop(arrayForLoop)); // Output: [1, 2, 3]
+
+//--------------------------------------------------------------------
+
+function findDuplicatesWhileLoop(arr) {
+    const duplicates = [];
+    let i = 0;
+    while (i < arr.length) {
+        let j = i + 1;
+        while (j < arr.length) {
+            if (arr[i] === arr[j] && !duplicates.includes(arr[i])) {
+                duplicates.push(arr[i]);
+            }
+            j++;
+        }   
+        i++;
+    }
+    return duplicates;
+}
+
+// Example usage:
+const arrayWhileLoop = [1, 2, 3, 4, 5, 3, 2, 1];
+console.log(findDuplicatesWhileLoop(arrayWhileLoop)); // Output: [1, 2, 3]
 
 //--------------------------------------------------------------------
