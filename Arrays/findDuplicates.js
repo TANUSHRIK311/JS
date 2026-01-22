@@ -36,3 +36,21 @@ function findDuplicatesReduce(arr) {
 // Example usage:
 const arrayReduce = [1, 2, 3, 4, 5, 3, 2, 1];
 console.log(findDuplicatesReduce(arrayReduce)); // Output: [1, 2, 3]
+
+//--------------------------------------------------------------------
+function findDuplicatesForLoop(arr) {
+    const duplicates = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j] && !duplicates.includes(arr[i])) {
+                duplicates.push(arr[i]);
+            }   
+        }
+    }
+    return duplicates;
+}
+// Example usage:
+const arrayForLoop = [1, 2, 3, 4, 5, 3, 2, 1];
+console.log(findDuplicatesForLoop(arrayForLoop)); // Output: [1, 2, 3]
+
+//--------------------------------------------------------------------
