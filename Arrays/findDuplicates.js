@@ -77,3 +77,23 @@ const arrayWhileLoop = [1, 2, 3, 4, 5, 3, 2, 1];
 console.log(findDuplicatesWhileLoop(arrayWhileLoop)); // Output: [1, 2, 3]
 
 //--------------------------------------------------------------------
+
+function findDuplicatesMap(arr) {
+    const countMap = new Map();
+    const duplicates = [];  
+    for (const item of arr) {
+        countMap.set(item, (countMap.get(item) || 0) + 1);
+    }
+    for (const [item, count] of countMap) {
+        if (count > 1) {
+            duplicates.push(item);
+        }   
+    }
+    return duplicates;
+}
+// Example usage:
+const arrayMap = [1, 2, 3, 4, 5, 3, 2, 1];
+console.log(findDuplicatesMap(arrayMap)); // Output: [1, 2, 3]
+
+//--------------------------------------------------------------------
+
