@@ -97,3 +97,20 @@ console.log(findDuplicatesMap(arrayMap)); // Output: [1, 2, 3]
 
 //--------------------------------------------------------------------
 
+function findDuplicatesSetMethod(arr) {
+    const seen = new Set();
+    const duplicates = new Set();
+    arr.forEach(item => {
+        if (seen.has(item)) {
+            duplicates.add(item);
+        } else {
+            seen.add(item);
+        }
+    });
+    return Array.from(duplicates);
+}
+// Example usage:   
+const arraySetMethod = [1, 2, 3, 4, 5, 3, 2, 1];
+console.log(findDuplicatesSetMethod(arraySetMethod)); // Output: [1, 2, 3]
+
+//--------------------------------------------------------------------
