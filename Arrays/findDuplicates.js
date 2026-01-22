@@ -114,3 +114,21 @@ const arraySetMethod = [1, 2, 3, 4, 5, 3, 2, 1];
 console.log(findDuplicatesSetMethod(arraySetMethod)); // Output: [1, 2, 3]
 
 //--------------------------------------------------------------------
+
+function findDuplicatesForEach(arr) {
+    const seen = [];
+    const duplicates = [];
+    arr.forEach(item => {
+        if (seen.includes(item)) {
+            if (!duplicates.includes(item)) {
+                duplicates.push(item);
+            }
+        } else {
+            seen.push(item);
+        }
+    });
+    return duplicates;
+}
+// Example usage:
+const arrayForEach = [1, 2, 3, 4, 5, 3, 2, 1];
+console.log(findDuplicatesForEach(arrayForEach)); // Output: [1, 2, 3]
