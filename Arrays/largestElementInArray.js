@@ -34,3 +34,14 @@ function largestElementUsingReduce(arr) {
 console.log(largestElementUsingReduce([3, 5, 7, 2, 8])); // Output: 8
 
 //--------------------------------------------------------------------
+
+function largestElementUsingSort(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }   
+    const sortedArr = arr.slice().sort((a, b) => b - a);
+    return sortedArr[0];
+}
+console.log(largestElementUsingSort([3, 5, 7, 2, 8])); // Output: 8
+
+//--------------------------------------------------------------------
