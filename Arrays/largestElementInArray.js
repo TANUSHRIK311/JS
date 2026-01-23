@@ -98,3 +98,14 @@ function largestElementUsingRecursion(arr) {
 console.log(largestElementUsingRecursion([3, 5, 7, 2, 8])); // Output: 8
 
 //--------------------------------------------------------------------
+
+function largestElementUsingSet(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    const uniqueElements = new Set(arr);
+    return Math.max(...uniqueElements);
+}
+console.log(largestElementUsingSet([3, 5, 7, 2, 8])); // Output: 8
+
+//--------------------------------------------------------------------
