@@ -79,3 +79,22 @@ function largestElementUsingWhileLoop(arr) {
 console.log(largestElementUsingWhileLoop([3, 5, 7, 2, 8])); // Output: 8
 
 //--------------------------------------------------------------------
+
+function largestElementUsingRecursion(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    function findMax(index, currentMax) {
+        if (index >= arr.length) {
+            return currentMax;
+        }
+        if (arr[index] > currentMax) {
+            currentMax = arr[index];
+        }
+        return findMax(index + 1, currentMax);
+    }
+    return findMax(1, arr[0]);
+}
+console.log(largestElementUsingRecursion([3, 5, 7, 2, 8])); // Output: 8
+
+//--------------------------------------------------------------------
