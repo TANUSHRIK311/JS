@@ -45,3 +45,19 @@ function largestElementUsingSort(arr) {
 console.log(largestElementUsingSort([3, 5, 7, 2, 8])); // Output: 8
 
 //--------------------------------------------------------------------
+
+function largestElementUsingForEach(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    let max = arr[0];
+    arr.forEach(item => {
+        if (item > max) {
+            max = item;
+        }
+    });
+    return max;
+}
+console.log(largestElementUsingForEach([3, 5, 7, 2, 8])); // Output: 8
+
+//--------------------------------------------------------------------
