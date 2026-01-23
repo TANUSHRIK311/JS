@@ -61,3 +61,21 @@ function largestElementUsingForEach(arr) {
 console.log(largestElementUsingForEach([3, 5, 7, 2, 8])); // Output: 8
 
 //--------------------------------------------------------------------
+
+function largestElementUsingWhileLoop(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    let max = arr[0];
+    let i = 1;  
+    while (i < arr.length) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        i++;
+    }
+    return max;
+}
+console.log(largestElementUsingWhileLoop([3, 5, 7, 2, 8])); // Output: 8
+
+//--------------------------------------------------------------------
