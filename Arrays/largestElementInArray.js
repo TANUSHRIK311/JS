@@ -24,3 +24,13 @@ function largestElementUsingMathMax(arr) {
 console.log(largestElementUsingMathMax([3, 5, 7, 2, 8])); // Output: 8
 
 //--------------------------------------------------------------------
+
+function largestElementUsingReduce(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    return arr.reduce((max, current) => (current > max ? current : max), arr[0]);
+}
+console.log(largestElementUsingReduce([3, 5, 7, 2, 8])); // Output: 8
+
+//--------------------------------------------------------------------
