@@ -109,3 +109,16 @@ function largestElementUsingSet(arr) {
 console.log(largestElementUsingSet([3, 5, 7, 2, 8])); // Output: 8
 
 //--------------------------------------------------------------------
+
+function largestElementUsingMap(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    const elementMap = new Map();
+    arr.forEach(item => {
+        elementMap.set(item, true);
+    }); 
+    return Math.max(...elementMap.keys());
+}
+console.log(largestElementUsingMap([3, 5, 7, 2, 8])); // Output: 8
+       
