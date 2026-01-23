@@ -15,4 +15,12 @@ console.log(largestElementInArray([3, 5, 7, 2, 8])); // Output: 8
     
 //--------------------------------------------------------------------
 
+function largestElementUsingMathMax(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    return Math.max(...arr);
+}
+console.log(largestElementUsingMathMax([3, 5, 7, 2, 8])); // Output: 8
 
+//--------------------------------------------------------------------
