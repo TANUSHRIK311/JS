@@ -238,3 +238,13 @@ function smallestElementUsingConcatApply(arr) {
 console.log(smallestElementUsingConcatApply([3, 5, 7, 2, 8])); // Output: 2
 
 //--------------------------------------------------------------------
+
+function smallestElementUsingReduceRight(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }   
+    return arr.reduceRight((min, current) => (current < min ? current : min), arr[0]);
+}
+console.log(smallestElementUsingReduceRight([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
