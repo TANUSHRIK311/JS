@@ -88,3 +88,17 @@ function smallestElementUsingSet(arr) {
 console.log(smallestElementUsingSet([3, 5, 7, 2, 8])); // Output: 2
 
 //--------------------------------------------------------------------
+
+function smallestElementUsingMap(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    const elementMap = new Map();
+    arr.forEach((element) => {
+        elementMap.set(element, true);
+    });
+    return Math.min(...elementMap.keys());
+}
+console.log(smallestElementUsingMap([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
