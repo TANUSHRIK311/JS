@@ -77,3 +77,14 @@ function smallestElementUsingRecursion(arr) {
 console.log(smallestElementUsingRecursion([3, 5, 7, 2, 8])); // Output: 2
 
 //--------------------------------------------------------------------
+
+function smallestElementUsingSet(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    const uniqueElements = new Set(arr);
+    return Math.min(...uniqueElements);
+}
+console.log(smallestElementUsingSet([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
