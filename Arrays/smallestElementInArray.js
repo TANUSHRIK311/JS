@@ -11,3 +11,15 @@ function smallestElementInArray(arr) {
     return min;
 }
  console.log(smallestElementInArray([3, 5, 7, 2, 8])); // Output: 2
+
+ //--------------------------------------------------------------------
+
+ function smallestElementUsingMathMin(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    return Math.min(...arr);
+}
+console.log(smallestElementUsingMathMin([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
