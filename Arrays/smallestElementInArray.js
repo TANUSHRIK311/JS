@@ -102,3 +102,14 @@ function smallestElementUsingMap(arr) {
 console.log(smallestElementUsingMap([3, 5, 7, 2, 8])); // Output: 2
 
 //--------------------------------------------------------------------
+
+function smallestElementUsingSort(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    const sortedArr = arr.slice().sort((a, b) => a - b);
+    return sortedArr[0];
+}
+console.log(smallestElementUsingSort([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
