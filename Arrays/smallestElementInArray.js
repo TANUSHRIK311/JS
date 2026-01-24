@@ -113,3 +113,13 @@ function smallestElementUsingSort(arr) {
 console.log(smallestElementUsingSort([3, 5, 7, 2, 8])); // Output: 2
 
 //--------------------------------------------------------------------
+
+function smallestElementUsingReduce(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    return arr.reduce((min, current) => (current < min ? current : min), arr[0]);
+}
+console.log(smallestElementUsingReduce([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
