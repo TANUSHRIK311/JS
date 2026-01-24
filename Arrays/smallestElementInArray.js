@@ -185,3 +185,20 @@ function smallestElementUsingSlice(arr) {
 console.log(smallestElementUsingSlice([3, 5, 7, 2, 8])); // Output: 2
 
 //--------------------------------------------------------------------
+
+function smallestElementUsingSpread(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    const newArr = [...arr];
+    let min = newArr[0];
+    for (let i = 1; i < newArr.length; i++) {  
+        if (newArr[i] < min) {
+            min = newArr[i];
+        }
+    }
+    return min;
+}   
+console.log(smallestElementUsingSpread([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
