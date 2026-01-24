@@ -58,3 +58,22 @@ function smallestElementUsingWhileLoop(arr) {
 console.log(smallestElementUsingWhileLoop([3, 5, 7, 2, 8])); // Output: 2
 
 //--------------------------------------------------------------------
+
+function smallestElementUsingRecursion(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }   
+    function findMin(index, currentMin) {
+        if (index >= arr.length) {
+            return currentMin;
+        }
+        if (arr[index] < currentMin) {
+            currentMin = arr[index];
+        }
+        return findMin(index + 1, currentMin);
+    }
+    return findMin(1, arr[0]);
+}
+console.log(smallestElementUsingRecursion([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
