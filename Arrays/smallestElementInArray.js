@@ -38,3 +38,23 @@ function smallestElementUsingForEach(arr) {
 }
 
 console.log(smallestElementUsingForEach([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
+
+function smallestElementUsingWhileLoop(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    let min = arr[0];
+    let i = 1;
+    while (i < arr.length) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+        i++;
+    }
+    return min;
+}
+console.log(smallestElementUsingWhileLoop([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
