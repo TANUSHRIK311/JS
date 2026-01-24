@@ -123,3 +123,14 @@ function smallestElementUsingReduce(arr) {
 console.log(smallestElementUsingReduce([3, 5, 7, 2, 8])); // Output: 2
 
 //--------------------------------------------------------------------
+
+function smallestElementUsingFilter(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    const filteredArr = arr.filter((element) => element !== undefined && element !== null);
+    return Math.min(...filteredArr);
+}
+console.log(smallestElementUsingFilter([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
