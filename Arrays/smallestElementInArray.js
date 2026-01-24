@@ -134,3 +134,20 @@ function smallestElementUsingFilter(arr) {
 console.log(smallestElementUsingFilter([3, 5, 7, 2, 8])); // Output: 2
 
 //--------------------------------------------------------------------
+
+function smallestElementUsingIndexOf(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }   
+    let min = arr[0];
+    for (let i = 1; i < arr.length; i++) {  
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+console.log(smallestElementUsingIndexOf([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
+
