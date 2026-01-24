@@ -297,3 +297,24 @@ function smallestElementUsingFilterReduce(arr) {
 console.log(smallestElementUsingFilterReduce([3, 5, 7, 2, 8])); // Output: 2
 
 //--------------------------------------------------------------------
+
+function smallestElementUsingWhileTrue(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }
+    let min = arr[0];
+    let i = 1;
+    while (true) {
+        if (i >= arr.length) {
+            break;
+        }
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+        i++;
+    }   
+    return min;
+}
+console.log(smallestElementUsingWhileTrue([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
