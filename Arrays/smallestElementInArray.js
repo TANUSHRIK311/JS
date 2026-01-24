@@ -248,3 +248,22 @@ function smallestElementUsingReduceRight(arr) {
 console.log(smallestElementUsingReduceRight([3, 5, 7, 2, 8])); // Output: 2
 
 //--------------------------------------------------------------------
+
+function smallestElementUsingEvery(arr) {
+    if (arr.length === 0) {
+        return null; // Return null for empty array
+    }       
+    let min = arr[0];
+    arr.every((element) => {
+        if (element < min) {
+            min = element;
+        }
+        return true; // Continue iteration
+    });
+
+    return min;
+}
+
+console.log(smallestElementUsingEvery([3, 5, 7, 2, 8])); // Output: 2
+
+//--------------------------------------------------------------------
