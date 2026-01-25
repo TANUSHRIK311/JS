@@ -84,3 +84,25 @@ function sumUsingSet(arr) {
  console.log(sumUsingSet([3, 5, 7, 2, 8, 3, 5])); // Output: 25
   
  //--------------------------------------------------------------------
+
+ function sumUsingMap(arr) {
+    if (arr.length === 0) {
+        return 0; // Return 0 for empty array
+    }   
+    const elementMap = new Map();
+    arr.forEach((element) => {
+        if (elementMap.has(element)) {
+            elementMap.set(element, elementMap.get(element) + 1);
+        } else {
+            elementMap.set(element, 1);
+        }
+    }); 
+    let sum = 0;
+    elementMap.forEach((value, key) => {
+        sum += key * value;
+    }); 
+    return sum;
+}
+console.log(sumUsingMap([3, 5, 7, 2, 8])); // Output: 25
+
+//--------------------------------------------------------------------
