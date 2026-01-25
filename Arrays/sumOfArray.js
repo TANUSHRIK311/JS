@@ -37,3 +37,18 @@ function sumUsingWhileLoop(arr) {
 console.log(sumUsingWhileLoop([3, 5, 7, 2, 8])); // Output: 25
 
 //--------------------------------------------------------------------
+
+function sumUsingRecursion(arr) {
+    if (arr.length === 0) {
+        return 0; // Return 0 for empty array
+    }   
+    function recursiveSum(index) {
+        if (index >= arr.length) {
+            return 0;
+        }
+        return arr[index] + recursiveSum(index + 1);
+    }
+    return recursiveSum(0);
+}
+console.log(sumUsingRecursion([3, 5, 7, 2, 8])); // Output: 25
+
