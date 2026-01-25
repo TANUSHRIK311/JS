@@ -11,3 +11,13 @@ function sumOfArray(arr) {
 console.log(sumOfArray([3, 5, 7, 2, 8])); // Output: 25
 
 //--------------------------------------------------------------------
+
+function sumUsingReduce(arr) {
+    if (arr.length === 0) {
+        return 0; // Return 0 for empty array
+    }
+    return arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+}
+console.log(sumUsingReduce([3, 5, 7, 2, 8])); // Output: 25
+
+//--------------------------------------------------------------------
