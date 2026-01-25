@@ -65,3 +65,21 @@ function sumUsingForEach(arr) {
     return sum;
 }
 console.log(sumUsingForEach([3, 5, 7, 2, 8])); // Output: 25
+
+
+//--------------------------------------------------------------------
+
+function sumUsingSet(arr) {
+    if (arr.length === 0) {
+        return 0; // Return 0 for empty array
+    }
+    const uniqueElements = new Set(arr);
+    let sum = 0;    
+    uniqueElements.forEach(function(element) {
+        sum += element;
+    }
+    );
+    return sum;
+}
+ console.log(sumUsingSet([3, 5, 7, 2, 8, 3, 5])); // Output: 25
+  
