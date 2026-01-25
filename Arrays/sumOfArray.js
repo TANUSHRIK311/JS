@@ -52,3 +52,16 @@ function sumUsingRecursion(arr) {
 }
 console.log(sumUsingRecursion([3, 5, 7, 2, 8])); // Output: 25
 
+//--------------------------------------------------------------------
+
+function sumUsingForEach(arr) {
+    if (arr.length === 0) {
+        return 0; // Return 0 for empty array
+    }
+    let sum = 0;
+    arr.forEach(function(element) {
+        sum += element;
+    });
+    return sum;
+}
+console.log(sumUsingForEach([3, 5, 7, 2, 8])); // Output: 25
