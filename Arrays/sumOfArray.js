@@ -107,16 +107,3 @@ console.log(sumUsingMap([3, 5, 7, 2, 8])); // Output: 25
 
 //--------------------------------------------------------------------
 
-function largestElementUsingForEach(arr) {
-    if (arr.length === 0) {
-        return null; // Return null for empty array
-    }
-    let max = arr[0];
-    arr.forEach(function(element) {
-        if (element > max) {
-            max = element;
-        }
-    });
-    return max;
-}   
-console.log(largestElementUsingForEach([3, 5, 7, 2, 8])); // Output: 8
