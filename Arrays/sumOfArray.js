@@ -21,3 +21,19 @@ function sumUsingReduce(arr) {
 console.log(sumUsingReduce([3, 5, 7, 2, 8])); // Output: 25
 
 //--------------------------------------------------------------------
+
+function sumUsingWhileLoop(arr) {
+    if (arr.length === 0) {
+        return 0; // Return 0 for empty array
+    }
+    let sum = 0;
+    let i = 0;
+    while (i < arr.length) {
+        sum += arr[i];
+        i++;
+    }
+    return sum;
+}
+console.log(sumUsingWhileLoop([3, 5, 7, 2, 8])); // Output: 25
+
+//--------------------------------------------------------------------
