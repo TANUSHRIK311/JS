@@ -147,3 +147,22 @@ function findSecondLargestUsingSplice(arr) {
 console.log(findSecondLargestUsingSplice([3, 5, 7, 2, 8])); // Output: 7
 
 //--------------------------------------------------------------------
+
+function findSecondLargestUsingMap(arr) {
+    if (arr.length < 2) {
+        return null; // Not enough elements for second largest
+    }   
+    let uniqueMap = new Map();
+    arr.forEach(num => {
+        uniqueMap.set(num, true);
+    });
+    let uniqueArr = Array.from(uniqueMap.keys());
+    if (uniqueArr.length < 2) {
+        return null;
+    }
+    uniqueArr.sort((a, b) => b - a);
+    return uniqueArr[1];
+}
+console.log(findSecondLargestUsingMap([3, 5, 7, 2, 8])); // Output: 7
+
+//--------------------------------------------------------------------
