@@ -114,3 +114,18 @@ function findSecondLargestUsingWhile(arr) {
 console.log(findSecondLargestUsingWhile([3, 5, 7, 2, 8])); // Output: 7
 
 //--------------------------------------------------------------------
+
+function findSecondLargestUsingSortDesc(arr) {
+    if (arr.length < 2) {
+        return null; // Not enough elements for second largest
+    }   
+    let uniqueArr = Array.from(new Set(arr)); // Remove duplicates
+    if (uniqueArr.length < 2) {
+        return null;
+    }   
+    uniqueArr.sort((a, b) => b - a);
+    return uniqueArr[1];
+}
+console.log(findSecondLargestUsingSortDesc([3, 5, 7, 2, 8])); // Output: 7  
+
+//--------------------------------------------------------------------
