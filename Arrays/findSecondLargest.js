@@ -221,3 +221,28 @@ function findSecondLargestUsingReduceRight(arr) {
 console.log(findSecondLargestUsingReduceRight([3, 5, 7, 2, 8])); // Output: 7
 
 //--------------------------------------------------------------------
+
+function findSecondLargestUsingLoopAndSet(arr) {
+    if (arr.length < 2) {
+        return null; // Not enough elements for second largest
+    }   
+    const uniqueElements = new Set(arr);
+    if (uniqueElements.size < 2) {
+        return null;
+    }
+    let first = -Infinity;
+    let second = -Infinity;
+    uniqueElements.forEach(num => {
+        if (num > first) {
+            second = first;
+            first = num;
+        }
+        else if (num > second && num !== first) {
+            second = num;
+        }
+    });
+    return (second === -Infinity) ? null : second;
+}
+console.log(findSecondLargestUsingLoopAndSet([3, 5, 7, 2, 8])); // Output: 7
+
+//--------------------------------------------------------------------
