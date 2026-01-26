@@ -166,3 +166,32 @@ function findSecondLargestUsingMap(arr) {
 console.log(findSecondLargestUsingMap([3, 5, 7, 2, 8])); // Output: 7
 
 //--------------------------------------------------------------------
+
+function findSecondLargestUsingRecursion(arr) {
+    if (arr.length < 2) {
+        return null; // Not enough elements for second largest
+    }   
+    let uniqueArr = Array.from(new Set(arr)); // Remove duplicates
+    if (uniqueArr.length < 2) {
+        return null;
+    }
+    function findLargestAndSecondLargest(index, first, second) {
+        if (index >= uniqueArr.length) {
+            return second;
+        }
+        if (uniqueArr[index] > first) {
+            second = first;
+            first = uniqueArr[index];
+        }
+        else if (uniqueArr[index] > second && uniqueArr[index] !== first) {
+            second = uniqueArr[index];
+        }
+        return findLargestAndSecondLargest(index + 1, first, second);
+    }   
+
+    const result = findLargestAndSecondLargest(0, -Infinity, -Infinity);
+    return (result === -Infinity) ? null : result;
+}   
+console.log(findSecondLargestUsingRecursion([3, 5, 7, 2, 8])); // Output: 7
+
+//--------------------------------------------------------------------
