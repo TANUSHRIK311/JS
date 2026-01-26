@@ -262,3 +262,20 @@ function findSecondLargestUsingArrayFromSet(arr) {
 console.log(findSecondLargestUsingArrayFromSet([3, 5, 7, 2, 8])); // Output: 7
 
     //--------------------------------------------------------------------
+
+function findSecondLargestUsingCustomSort(arr) {
+    if (arr.length < 2) {
+        return null; // Not enough elements for second largest
+    }       
+    let uniqueArr = Array.from(new Set(arr)); // Remove duplicates
+    if (uniqueArr.length < 2) {
+        return null;
+    }
+    uniqueArr.sort(function(a, b) {
+        return b - a;
+    });
+    return uniqueArr[1];
+}
+console.log(findSecondLargestUsingCustomSort([3, 5, 7, 2, 8])); // Output: 7
+
+    //--------------------------------------------------------------------
