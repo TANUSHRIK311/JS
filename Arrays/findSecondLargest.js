@@ -317,3 +317,18 @@ function findSecondLargestUsingLoop(arr) {
 console.log(findSecondLargestUsingLoop([3, 5, 7, 2, 8])); // Output: 7
 
 //--------------------------------------------------------------------
+
+function findSecondLargestUsingArrayMethods(arr) {
+    if (arr.length < 2) {
+        return null; // Not enough elements for second largest
+    }   
+    let uniqueArr = Array.from(new Set(arr)); // Remove duplicates
+    if (uniqueArr.length < 2) {
+        return null;
+    }
+    uniqueArr.sort((a, b) => b - a);
+    return uniqueArr[1];
+}
+console.log(findSecondLargestUsingArrayMethods([3, 5, 7, 2, 8])); // Output: 7
+
+//--------------------------------------------------------------------
