@@ -296,3 +296,24 @@ function findSecondLargestUsingIndexOf(arr) {
 console.log(findSecondLargestUsingIndexOf([3, 5, 7, 2, 8])); // Output: 7
 
 //--------------------------------------------------------------------
+
+function findSecondLargestUsingLoop(arr) {
+    if (arr.length < 2) {
+        return null; // Not enough elements for second largest
+    }
+    let first = -Infinity;
+    let second = -Infinity; 
+    let uniqueArr = Array.from(new Set(arr));
+    for (let i = 0; i < uniqueArr.length; i++) {
+        if (uniqueArr[i] > first) {
+            second = first;
+            first = uniqueArr[i];
+        } else if (uniqueArr[i] > second && uniqueArr[i] !== first) {
+            second = uniqueArr[i];
+        }
+    }
+    return (second === -Infinity) ? null : second;
+}
+console.log(findSecondLargestUsingLoop([3, 5, 7, 2, 8])); // Output: 7
+
+//--------------------------------------------------------------------
