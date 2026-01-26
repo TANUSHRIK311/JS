@@ -279,3 +279,20 @@ function findSecondLargestUsingCustomSort(arr) {
 console.log(findSecondLargestUsingCustomSort([3, 5, 7, 2, 8])); // Output: 7
 
     //--------------------------------------------------------------------
+
+function findSecondLargestUsingIndexOf(arr) {
+    if (arr.length < 2) {
+        return null; // Not enough elements for second largest
+    }       
+    let uniqueArr = Array.from(new Set(arr)); // Remove duplicates
+    if (uniqueArr.length < 2) {
+        return null;
+    }   
+    let max = Math.max(...uniqueArr);
+    let maxIndex = uniqueArr.indexOf(max);
+    uniqueArr.splice(maxIndex, 1);  
+    return Math.max(...uniqueArr);
+}
+console.log(findSecondLargestUsingIndexOf([3, 5, 7, 2, 8])); // Output: 7
+
+//--------------------------------------------------------------------
