@@ -246,3 +246,19 @@ function findSecondLargestUsingLoopAndSet(arr) {
 console.log(findSecondLargestUsingLoopAndSet([3, 5, 7, 2, 8])); // Output: 7
 
 //--------------------------------------------------------------------
+
+function findSecondLargestUsingArrayFromSet(arr) {
+    if (arr.length < 2) {
+        return null; // Not enough elements for second largest
+    }   
+    const uniqueArr = Array.from(new Set(arr));
+    if (uniqueArr.length < 2) {
+        return null;
+    }
+    uniqueArr.sort((a, b) => b - a);
+    return uniqueArr[1];
+
+}
+console.log(findSecondLargestUsingArrayFromSet([3, 5, 7, 2, 8])); // Output: 7
+
+    //--------------------------------------------------------------------
