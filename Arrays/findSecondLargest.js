@@ -53,3 +53,19 @@ function findSecondLargestUsingReduce(arr) {
 console.log(findSecondLargestUsingReduce([3, 5, 7, 2, 8])); // Output: 7
 
 //--------------------------------------------------------------------
+
+function findSecondLargestUsingFilter(arr) {
+    if (arr.length < 2) {
+        return null; // Not enough elements for second largest
+    }
+    let uniqueArr = arr.filter((item, index) => arr.indexOf(item) === index); // Remove duplicates
+    if (uniqueArr.length < 2) {
+        return null;
+    }
+    let max = Math.max(...uniqueArr);
+    uniqueArr = uniqueArr.filter(item => item !== max);
+    return Math.max(...uniqueArr);
+}
+console.log(findSecondLargestUsingFilter([3, 5, 7, 2, 8])); // Output: 7
+
+//--------------------------------------------------------------------
