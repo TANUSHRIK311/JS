@@ -332,3 +332,20 @@ function findSecondLargestUsingArrayMethods(arr) {
 console.log(findSecondLargestUsingArrayMethods([3, 5, 7, 2, 8])); // Output: 7
 
 //--------------------------------------------------------------------
+
+function findSecondLargestUsingDestructuring(arr) {
+    if (arr.length < 2) {
+        return null; // Not enough elements for second largest
+    }
+    let uniqueArr = Array.from(new Set(arr)); // Remove duplicates
+    if (uniqueArr.length < 2) {
+        return null;
+    }
+    uniqueArr.sort((a, b) => b - a);
+    const [first, second] = uniqueArr;
+    return second;
+}
+console.log(findSecondLargestUsingDestructuring([3, 5, 7, 2, 8])); // Output: 7
+
+//--------------------------------------------------------------------
+
