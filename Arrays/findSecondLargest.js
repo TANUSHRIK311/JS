@@ -370,3 +370,4 @@ function findSecondLargestUsingLoopAndArray(arr) {
 console.log(findSecondLargestUsingLoopAndArray([3, 5, 7, 2, 8])); // Output: 7
 
 //--------------------------------------------------------------------
+
