@@ -26,5 +26,18 @@ function secondSmallest_singlePass(arr) {
     return secondSmallest === Infinity ? null : secondSmallest;
 }
 
+console.log(secondSmallest_singlePass([1,3,5,6]));
+
 //----------------------------------------------------------------
 
+function secondSmallest_set(arr) {
+    const s = new Set(arr);
+    if (s.size < 2) return null;
+
+    let min = Math.min(...s);
+    s.delete(min);
+    return Math.min(...s);
+}
+console.log(secondSmallest_set([1,3,5,6]));
+
+//--------------------------------------------
