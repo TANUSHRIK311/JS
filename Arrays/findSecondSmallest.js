@@ -41,3 +41,17 @@ function secondSmallest_set(arr) {
 console.log(secondSmallest_set([1,3,5,6]));
 
 //--------------------------------------------
+
+function secondSmallest_reduce(arr) {
+    const res = arr.reduce(
+        ([min, second], x) => {
+            if (x < min) return [x, min];
+            if (x > min && x < second) return [min, x];
+            return [min, second];
+        },
+        [Infinity, Infinity]
+    );
+
+    return res[1] === Infinity ? null : res[1];
+}
+console.log(secondSmallest_reduce([1,3,5,6]));
