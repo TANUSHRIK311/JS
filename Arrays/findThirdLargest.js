@@ -37,3 +37,27 @@ function thirdLargestElement(arr) {
     return third === -Infinity ? null : third;
 }
 console.log(thirdLargestElement([10, 5, 20, 8, 20])); // 8
+
+//------------------------------------------------------------
+
+function thirdLargestElement(arr) {
+    let n = arr.length;
+
+    for (let i = 0; i < n; i++) {
+        let count = 0;
+
+        for (let j = 0; j < n; j++) {
+            if (arr[j] > arr[i]) {
+                count++;
+            }
+        }
+
+        // If exactly 2 elements are greater, this is the 3rd largest
+        if (count === 2) {
+            return arr[i];
+        }
+    }
+
+    return null; // if no 3rd largest exists
+}
+console.log(thirdLargestElement([10, 5, 20, 8, 20])); // 8
