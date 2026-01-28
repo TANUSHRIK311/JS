@@ -79,3 +79,15 @@ function thirdLargestElement(arr) {
 }
 
 //--------------------------------------------------------------
+function thirdLargestElement(arr) {
+    let temp = [...arr];
+
+    for (let i = 0; i < 2; i++) {
+        let max = Math.max(...temp);
+        temp = temp.filter(x => x !== max);
+    }
+
+    return temp.length ? Math.max(...temp) : null;
+}
+console.log(thirdLargestElement([10, 5, 20, 8, 20])); // 8
+
