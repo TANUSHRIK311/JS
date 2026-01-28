@@ -63,3 +63,11 @@ function thirdLargestElement(arr) {
 console.log(thirdLargestElement([10, 5, 20, 8, 20])); // 8
 
 //-------------------------------------------------------------------
+
+function thirdLargestElement(arr) {
+    arr.sort((a, b) => b - a);
+    return arr.length >= 3 ? arr[2] : null;
+}
+console.log(thirdLargestElement([10, 5, 20, 8, 20])); // 8
+
+//--------------------------------------------------------------
