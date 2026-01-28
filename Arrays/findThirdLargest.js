@@ -91,3 +91,17 @@ function thirdLargestElement(arr) {
 }
 console.log(thirdLargestElement([10, 5, 20, 8, 20])); // 8
 
+//--------------------------------------------------------------
+function thirdLargestElement(arr) {
+    let s = new Set(arr);
+
+    if (s.size < 3) return null;
+
+    s.delete(Math.max(...s));
+    s.delete(Math.max(...s));
+
+    return Math.max(...s);
+}
+console.log(thirdLargestElement([10, 5, 20, 8, 20])); // 8
+
+//--------------------------------------------------------------
