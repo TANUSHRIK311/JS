@@ -61,3 +61,5 @@ function thirdLargestElement(arr) {
     return null; // if no 3rd largest exists
 }
 console.log(thirdLargestElement([10, 5, 20, 8, 20])); // 8
+
+//-------------------------------------------------------------------
