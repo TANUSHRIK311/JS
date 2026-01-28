@@ -71,3 +71,11 @@ function thirdLargestElement(arr) {
 console.log(thirdLargestElement([10, 5, 20, 8, 20])); // 8
 
 //--------------------------------------------------------------
+
+function thirdLargestElement(arr) {
+    let unique = arr.filter((v, i) => arr.indexOf(v) === i);
+    unique.sort((a, b) => b - a);
+    return unique.length >= 3 ? unique[2] : null;
+}
+
+//--------------------------------------------------------------
